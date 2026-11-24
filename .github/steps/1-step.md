@@ -96,28 +96,25 @@ Before we dive into MCP, let's start up our development environment and refamili
 
    </details>
 
-1. Inside your codespace, navigate to the `.vscode` folder, and create a new file named `mcp.json`. Paste the following contents:
+1. In the workspace root, create a file named `.mcp.json` and paste the following contents:
 
-   📄 **.vscode/mcp.json**
+   📄 **.mcp.json**
 
    ```json
    {
-     "servers": {
+     "mcpServers": {
        "github": {
          "type": "http",
-         "url": "https://api.githubcopilot.com/mcp/"
+         "url": "https://api.githubcopilot.com/mcp/",
+         "tools": ["*"]
        }
      }
    }
    ```
 
-1. In the `.vscode/mcp.json` file, click the **Start** button and accept the prompt to authenticate with GitHub. This has just informed GitHub Copilot of the MCP server's capabilities.
+1. In Copilot Chat, select the **Copilot** session target. Open **Chat: Open Customizations** from the Command Palette, select **MCP Servers**, and start the GitHub server. Accept the authentication prompt if asked.
 
-   <img width="350" alt="mcp.json file showing start button" src="https://github.com/user-attachments/assets/15a3d885-1c13-40b4-8d59-87b478ddd8a0" />
-
-   <img width="350" alt="allow authentication prompt" src="https://github.com/user-attachments/assets/f5ec128d-9924-454b-8ab4-3f43ebc83cfc" /><br/>
-
-   <img width="350" alt="mcp.json file showing running server" src="https://github.com/user-attachments/assets/c413c52d-94dc-429f-91e0-3486141908b9" />
+   If the server does not appear, reload VS Code and check that the `.mcp.json` file is at the workspace root.
 
 1. In the Copilot side panel, click the **🛠️ icon** to show the additional capabilities.
 
@@ -125,7 +122,7 @@ Before we dive into MCP, let's start up our development environment and refamili
 
    <img width="350" alt="image" src="https://github.com/user-attachments/assets/99178d1b-adbe-4cf4-ab9c-3a4d29918a13" />
 
-1. **Commit** and **push** the `.vscode/mcp.json` file to the `main` branch.
+1. **Commit** and **push** the `.mcp.json` file to the `main` branch.
 
    > 🪧 **Note:** Pushing directly to `main` is not a recommended practice. It is only to simplify this exercise.
 
@@ -139,7 +136,8 @@ Before we dive into MCP, let's start up our development environment and refamili
 
 Make sure:
 
-- Your `.vscode/mcp.json` file is similar to the example provided.
+- Your workspace-root `.mcp.json` file is similar to the example provided.
+- Copilot is selected as the session target.
 - You pushed the changes to the `main` branch.
 
 </details>
